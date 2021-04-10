@@ -29,6 +29,7 @@ Using .mhtml files leaves us with files that are both easily readable by both hu
 ### scrape2_nodb_look.py
   - This scrapes the sherrif's webpage and then extracts data into a sqlite3 two files for the booking information and the charges
 
-      - charges2021-01-01T18-30.csvv
+      - charges2021-01-01T18-30.csv
       - all_in_jail2021-01-01T18-30.csv
+
 
