@@ -769,7 +769,7 @@ def main():
     #output_ext_charges.append(r_s_header+ext_charges_header)
     
     output_ct_record = []
-    court_records_header = ['Date', 'Event', 'Court official', 'Court reporter','Prosecutor','Amount', "Additional text"]  
+    court_records_header = ['Date', 'Event', 'Court official', 'Court reporter','Amount', "Additional text"]  
     #output_ct_record.append(r_s_header+court_records_header)
 
   
@@ -801,9 +801,10 @@ def main():
             if extracted_data.get("defendant"):    
                 race_gender_addr_line = report_race_gender(extracted_data, r_s_a_header) # format data for this file
                 output_race_gender.append(race_gender_addr_line) # save it for the whole thing
-                race_gender_line = race_gender_addr_line[:7]
+                trim_point = len(r_s_header)
+                race_gender_line = race_gender_addr_line[:trim_point]
             else:
-                race_gender_line = [""]*7
+                race_gender_line = [""]*len(r_s_header)
                 print("ERROR No defendent so no case # or Race_Gender")
                 
             if extracted_data.get("full_charges"):    
